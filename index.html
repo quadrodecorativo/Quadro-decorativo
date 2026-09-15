@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ateliê Dourado | Quadro Poker</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#171717;background:#fff}
+.top{background:#171717;color:#fff;text-align:center;padding:10px;font-size:11px;letter-spacing:1px}
+header{height:76px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between;padding:0 6%;position:sticky;top:0;background:#fff;z-index:5}
+.logo{font:700 22px Georgia,serif;letter-spacing:2px}.contact{border:1px solid #222;padding:11px 17px;font-size:12px;text-transform:uppercase}
+.hero{background:#f6f2ec;padding:55px 7%;text-align:center}.hero h1{font:400 46px Georgia,serif;margin:0 0 12px}.hero p{color:#666;line-height:1.6}
+main{padding:55px 7%}.title{text-align:center;font:400 34px Georgia,serif;margin:0 0 35px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}.card{cursor:pointer}.cover{height:390px;background:#eee;overflow:hidden}.cover img{width:100%;height:100%;object-fit:cover}
+.card h2{font:400 21px Georgia,serif;margin:15px 0 6px}.price{font-weight:bold;font-size:18px}
+.modal{display:none;position:fixed;inset:0;background:#0009;z-index:10;padding:25px;overflow:auto}.modal.open{display:block}
+.box{background:#fff;max-width:1100px;margin:auto;padding:25px}.close{float:right;font-size:28px;cursor:pointer}
+.gallery{display:grid;grid-template-columns:1.1fr .9fr;gap:25px}.big{height:620px;background:#eee}.big img{width:100%;height:100%;object-fit:contain}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}.thumb{height:100px;border:2px solid transparent;overflow:hidden;cursor:pointer}.thumb.active{border-color:#222}.thumb img{width:100%;height:100%;object-fit:cover}
+.details{padding:20px 10px}.details h1{font:400 40px Georgia,serif;margin:12px 0}.details p{color:#666;line-height:1.7}.details .price{font-size:28px;margin:22px 0;color:#171717}
+.whats{display:block;text-align:center;background:#171717;color:#fff;padding:16px;margin-top:25px;font-size:13px;letter-spacing:1px}
+.info{background:#f7f5f1;padding:38px 7%;display:grid;grid-template-columns:repeat(3,1fr);text-align:center;gap:20px}.info b{display:block;margin-bottom:7px}.info span{font-size:12px;color:#777}
+footer{margin-top:45px;background:#171717;color:#fff;padding:35px 7%;font-size:13px}
+@media(max-width:800px){.grid{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr}.big{height:450px}.info{grid-template-columns:1fr}.hero h1{font-size:38px}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.cover{height:420px}.thumb{height:80px}}
+</style>
+</head>
+<body>
+<div class="top">CATÁLOGO ONLINE • ENVIO PARA TODO O BRASIL</div>
+<header><div class="logo">ATELIÊ DOURADO</div><a class="contact" href="#colecao">Ver coleção</a></header>
+<section class="hero"><h1>Quadros que transformam ambientes</h1><p>Encontre a peça ideal para deixar seu ambiente mais elegante e marcante.</p></section>
+<main id="colecao"><h2 class="title">Nossa coleção</h2><div class="grid">
+<article class="card" onclick="openProduct()">
+<div class="cover"><img src="imagens/quadro_poker_1.png" alt="Quadro Poker"></div>
+<h2>Quadro Poker</h2><div class="price">R$ 250,00</div>
+</article>
+</div></main>
+<div class="info"><div>🚚<b>Envio para todo Brasil</b><span>Consulte o prazo para sua região</span></div><div>✨<b>Acabamento premium</b><span>Peça para ambientes modernos</span></div><div>💬<b>Atendimento</b><span>Fale conosco para tirar dúvidas</span></div></div>
+<footer>© 2026 Ateliê Dourado — Catálogo de quadros decorativos</footer>
+<div class="modal" id="modal"><div class="box"><span class="close" onclick="closeProduct()">×</span>
+<div class="gallery"><div><div class="big"><img id="big" src="imagens/quadro_poker_1.png"></div>
+<div class="thumbs">
+<div class="thumb active" onclick="photo(1)"><img src="imagens/quadro_poker_1.png"></div>
+<div class="thumb" onclick="photo(2)"><img src="imagens/quadro_poker_2.png"></div>
+<div class="thumb" onclick="photo(3)"><img src="imagens/quadro_poker_3.png"></div>
+<div class="thumb" onclick="photo(4)"><img src="imagens/quadro_poker_4.png"></div>
+</div></div>
+<div class="details"><small>QUADRO DECORATIVO</small><h1>Quadro Poker</h1><div class="price">R$ 250,00</div>
+<p>Quadro com temática clássica de pôquer, ideal para salas, escritórios, bares e espaços de entretenimento.</p>
+<p><b>Fotos:</b> 4 imagens do produto e ambientações.</p>
+<a class="whats" href="https://wa.me/?text=Olá! Tenho interesse no Quadro Poker por R$ 250,00." target="_blank">CONSULTAR PELO WHATSAPP</a>
+</div></div></div></div>
+<script>
+function openProduct(){document.getElementById('modal').classList.add('open')}
+function closeProduct(){document.getElementById('modal').classList.remove('open')}
+function photo(n){document.getElementById('big').src='imagens/quadro_poker_'+n+'.png';document.querySelectorAll('.thumb').forEach((x,i)=>x.classList.toggle('active',i===n-1))}
+</script>
+</body></html>
